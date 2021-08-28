@@ -1,17 +1,19 @@
 <template>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="(image,index) in imgs" :key="index">
-        <img :src="image.pic" alt="">
+  <div id="banner">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="(image,index) in imgs" :key="index">
+          <img :src="image.pic" alt="">
+        </div>
       </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+
+      <!-- 如果需要导航按钮 -->
+      <!--    <div class="swiper-button-prev"></div>-->
+      <!--    <div class="swiper-button-next"></div>-->
+
     </div>
-    <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
-
-    <!-- 如果需要导航按钮 -->
-<!--    <div class="swiper-button-prev"></div>-->
-<!--    <div class="swiper-button-next"></div>-->
-
   </div>
 </template>
 <script>
@@ -34,13 +36,13 @@ export default {
       // 调用接口获得轮播图
       const res = await getBanner()
       this.imgs = res.data.banners
-      console.log(this.imgs)
+      // console.log(this.imgs)
     }
   },
   async mounted () {
     await this.loadBanner()
     // eslint-disable-next-line no-unused-vars
-    const mySwiper = new Swiper('.swiper-container', {
+    const mySwiper = new Swiper('#banner .swiper-container', {
       direction: 'horizontal', // 垂直切换选项
       loop: true, // 循环模式选项
 
@@ -60,24 +62,29 @@ export default {
 </script>
 
 <style lang="less">
-.swiper-container {
-  width: 7.1rem;
-  height: 3.76rem  /* 188/50 */;
-  border-radius: .3rem;
-  overflow: hidden;
-  margin-top: 0.44rem /* 22/50 */;
+#banner {
+  width: 7.5rem;
 
-  .swiper-slide {
+  .swiper-container {
+    width: 7.1rem;
+    height: 3.76rem /* 188/50 */;
+    border-radius: .3rem;
+    overflow: hidden;
+    margin-top: 0.44rem /* 22/50 */;
 
-    img {
-      width: 100%;
-      height: 100%;
+    .swiper-slide {
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
     }
+  }
 
+  .swiper-pagination-bullet-active {
+    background-color: orangered;
   }
 }
 
-.swiper-pagination-bullet-active {
-  background-color: orangered;
-}
 </style>
