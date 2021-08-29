@@ -20,3 +20,14 @@ export const getPlayListDetail = id => {
     }
   })
 }
+
+// 获取歌曲详情
+export const getSongDetail = ids => {
+  return request({
+    method: 'GET',
+    url: '/song/detail',
+    params: {
+      ids
+    }
+  })
+}

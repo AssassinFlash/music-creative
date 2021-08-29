@@ -81,11 +81,7 @@ export default {
   props: ['playlist'],
   data: function () {
     return {
-      playList: null
     }
-  },
-  beforeMount () {
-    this.playList = this.$props.playlist
   }
 }
 </script>
@@ -114,7 +110,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      height: 1.07rem;
+      height: .74rem;
 
       .left, .right {
         display: flex;
@@ -124,29 +120,29 @@ export default {
 
       .left {
         .back {
-          width: .58rem;
-          height: .5rem;
-          margin-right: .5rem;
+          width: .4rem;
+          height: .4rem;
+          margin-right: .4rem;
           fill: white;
         }
 
         .title {
-          font-size: .47rem;
+          font-size: .33rem;
           color: white;
         }
       }
 
       .right {
         .search {
-          width: .77rem;
-          height: 80%;
-          margin-right: .4rem;
+          width: .5rem;
+          height: .5rem;
+          margin-right: .3rem;
           fill: white;
         }
 
         .more {
-          width: .58rem;
-          height: .5rem;
+          width: .4rem;
+          height: .4rem;
           fill: white;
         }
       }
@@ -155,15 +151,16 @@ export default {
     .content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       width: 7.1rem;
-      height: 3.5rem;
-      margin: 0 auto;
+      height: 2.5rem;
+      margin: .2rem auto 0;
 
       .contentLeft {
         position: relative;
-        width: 3.5rem;
-        height: 3.5rem;
-        margin-right: .57rem;
+        width: 2.44rem;
+        height: 2.44rem;
+        margin-right: .4rem;
         border-radius: .1rem;
         overflow: hidden;
 
@@ -178,20 +175,21 @@ export default {
           top: 0;
           display: flex;
           align-items: center;
+          font-size: .2rem;
           color: white;
         }
       }
 
       .contentRight {
         flex: 1;
-        height: 3.5rem;
+        height: 100%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
 
         h3 {
-          padding: .11rem 0 .3rem 0;
-          font-size: .46rem;
+          margin-bottom: .2rem;
+          font-size: .32rem;
           color: white;
         }
 
@@ -201,26 +199,26 @@ export default {
           align-items: center;
 
           .avatar {
-            width: .76rem;
-            height: .76rem;
-            border-radius: .38rem;
+            width: .53rem;
+            height: .53rem;
+            border-radius: .265rem;
             margin-right: .2rem;
           }
 
           .author-name {
-            width: 1.5rem;
-            height: .4rem;
+            width: fit-content;
+            margin-right: .1rem;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: .35rem;
+            font-size: .24rem;
             line-height: .4rem;
             color: #cdcdcd;
           }
 
           .icon {
-            width: .35rem;
-            height: .35rem;
+            width: .24rem;
+            height: .24rem;
             fill: #cdcdcd;
           }
         }
@@ -229,24 +227,25 @@ export default {
           display: flex;
           align-items: center;
           width: 100%;
-          height: .8rem;
-          margin-top: .25rem;
+          height: .6rem;
+          margin-top: .2rem;
 
           span {
-            flex: 1;
-            height: 100%;
-            overflow: hidden;
+            width: 3rem;
+            //height: 100%;
+            //overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            font-size: .3rem;
+            font-size: .23rem;
             color: #b5acad;
           }
 
           .icon {
-            width: .3rem;
-            height: .3rem;
+            width: .21rem;
+            height: .21rem;
             margin: 0 .1rem;
+            vertical-align: middle;
             fill: #b5acad;
           }
         }
@@ -258,7 +257,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       width: 6rem;
-      height: 1.04rem;
+      height: .72rem;
       margin: .66rem auto 0;
 
       .iconItem {
@@ -273,7 +272,7 @@ export default {
         }
 
         span {
-          font-size: .3rem;
+          font-size: .21rem;
           color: #c8c8d0;
         }
       }

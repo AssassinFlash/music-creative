@@ -5,7 +5,7 @@
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-tuijian"></use>
         </svg>
-        <span>每日推荐</span>
+        <span>推荐</span>
       </div>
       <div class="iconItem">
         <svg class="icon" aria-hidden="true">
@@ -44,7 +44,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 7.1rem;
-    margin: 0.42rem /* 21/50 */ auto 0;
+    margin: 0.4rem auto 0;
     padding: 0 0.2rem /* 10/50 */;
 
     .iconItem {
@@ -52,17 +52,17 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 1.26rem /* 63/50 */;
-      height: 100%;
+      width: 1rem /* 43/50 */;
       cursor: pointer;
 
       .icon {
-        width: 100%;
-        height: 1.26rem
+        width: .7rem;
+        height: .7rem;
+        margin-bottom: .1rem;
       }
 
       span {
-        font-size: 0.3rem /* 15/50 */;
+        font-size: 0.21rem  /* 10.5/50 */
       }
     }
   }

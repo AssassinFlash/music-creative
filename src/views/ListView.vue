@@ -3,7 +3,7 @@
     <LottieLoading v-show="$store.state.loading"></LottieLoading>
     <div class="listView">
       <listViewTop :playlist="state.playlist"></listViewTop>
-      <songList></songList>
+      <songList :playlist="state.playlist"></songList>
     </div>
   </div>
 </template>
@@ -24,9 +24,7 @@ export default {
     return {
       state: {
         list: [],
-        playlist: {
-          creator: {}
-        }
+        playlist: {}
       }
     }
   },
@@ -41,8 +39,8 @@ export default {
       this.$store.commit('setLoading', false)
     }
   },
-  created () {
-    this.loadPlayList()
+  async created () {
+    await this.loadPlayList()
   }
 }
 </script>

@@ -28,7 +28,7 @@ export default {
 <style lang="less" scoped>
 .topNav {
   width: 7.5rem;
-  height: 1.2rem /* 60/50 */;
+  height: .83rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,29 +39,22 @@ export default {
   }
 
   .topLeft, .topRight {
-    width: 1rem;
-  }
-
-  .topRight {
-    .icon {
-      width: 0.46rem  /* 23/50 */;
-      height: 0.46rem  /* 23/50 */;
-      margin-left: .5rem;
-    }
+    width: .45rem;
   }
 
   .topCenter {
     flex: 1;
+    margin: 0 .6rem;
     justify-content: space-around;
     align-items: center;
 
     .navBtn {
-      font-size: 0.42rem /* 21/50 */;
+      font-size: 0.29rem /* 21/50 */;
       color: #8b8b8b;
     }
 
     .active {
-      font-size: 0.48rem  /* 24/50 */;
+      font-size: 0.33rem  /* 24/50 */;
       font-weight: 700;
       color: black;
     }

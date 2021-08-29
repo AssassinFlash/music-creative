@@ -67,10 +67,10 @@ export default {
 
   .swiper-container {
     width: 7.1rem;
-    height: 3.76rem /* 188/50 */;
+    height: 2.7rem;
     border-radius: .3rem;
     overflow: hidden;
-    margin-top: 0.44rem /* 22/50 */;
+    margin-top: 0.31rem;
 
     .swiper-slide {
 

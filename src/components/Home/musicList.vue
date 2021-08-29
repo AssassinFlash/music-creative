@@ -70,7 +70,7 @@ export default {
 
   .musicList {
     width: 7.1rem;
-    margin: 0.78rem auto 0 /* 39/50 */;
+    margin: 0.54rem auto 0 /* 39/50 */;
     padding: 0 0.1rem;
 
     .musicList-top {
@@ -78,10 +78,10 @@ export default {
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      height: .7rem;
+      height: .5rem;
 
       .title {
-        font-size: .45rem;
+        font-size: 0.4rem /* 20/50 */;
         font-weight: 700;
       }
 
@@ -90,8 +90,8 @@ export default {
         padding: 0 0.24rem;
         border: 0.06rem solid #e8e8e8 /* 3/50 */;
         border-radius: 0.28rem;
-        line-height: 0.58rem;
-        font-size: .32rem;
+        line-height: 0.38rem;
+        font-size: .22rem;
         cursor: pointer;
       }
     }
@@ -106,7 +106,7 @@ export default {
 
         .swiper-slide {
           position: relative;
-          width: 3.04rem;
+          width: 2.11rem;
           margin: 0 0.14rem 0;
           cursor: pointer;
           text-decoration: none;
@@ -117,13 +117,19 @@ export default {
 
           img {
             width: 100%;
-            height: 3.04rem;
-            margin-bottom: 0.16rem;
+            height: 2.11rem;
+            margin-bottom: 0.1rem;
             border-radius: .12rem;
           }
 
           p {
+            width: 100%;
+            height: .7rem;
             padding: 0 0.1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-size: .2rem;
             line-height: 1.5;
             color: black
           }
@@ -137,12 +143,12 @@ export default {
             align-items: center;
 
             .icon {
-              width: 0.4rem /* 26/50 */;
-              height: 0.4rem /* 26/50 */;
+              width: 0.28rem /* 26/50 */;
+              height: 0.28rem /* 26/50 */;
             }
 
             span {
-              font-size: 0.4rem /* 26/50 */;
+              font-size: 0.28rem /* 26/50 */;
               color: white;
             }
           }
