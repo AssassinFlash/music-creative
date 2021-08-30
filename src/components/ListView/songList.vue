@@ -23,7 +23,9 @@
       </div>
       <div class="list">
         <LottieLoading v-if="$store.state.loading"></LottieLoading>
-        <div class="songItem" v-for="(song,index) in songList" :key="index">
+        <div class="songItem"
+             v-for="(song,index) in songList"
+             :key="index" @click="getControllerFullSongs(song.id)">
           <div class="left">
             <p class="index">{{ index + 1 }}</p>
             <div class="content">
@@ -48,6 +50,8 @@
 <script>
 import { getSongDetail } from '@/api/goodMusicList'
 import LottieLoading from '@/components/Loading/LottieLoading'
+import { mapMutations } from 'vuex'
+import emitter from '@/utils/eventBus'
 
 export default {
   name: 'songList',
@@ -61,6 +65,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['setPlaylist', 'setPlayCurrentIndex']),
     getFullSongList: async function () {
       this.$store.commit('setLoading', true)
       let ids = ''
@@ -79,6 +84,12 @@ export default {
       })
       res = res.slice(0, res.length - 1)
       return res
+    },
+    getControllerFullSongs: function (songId) {
+      this.setPlaylist(this.songList)
+      this.setPlayCurrentIndex(songId)
+      // console.log('click')
+      emitter.emit('updateController')
     }
   },
   computed: {
@@ -90,8 +101,8 @@ export default {
       return res
     }
   },
-  mounted () {
-    this.getFullSongList()
+  async mounted () {
+    await this.getFullSongList()
   }
 }
 </script>
@@ -106,6 +117,8 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
       width: 100%;
       height: .875rem;
       border-top-left-radius: .35rem;

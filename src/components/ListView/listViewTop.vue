@@ -80,8 +80,7 @@ export default {
   name: 'listViewTop',
   props: ['playlist'],
   data: function () {
-    return {
-    }
+    return {}
   }
 }
 </script>

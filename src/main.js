@@ -6,4 +6,7 @@ import store from './store'
 import '../public/js/rem.js'
 // 引入全局样式
 import '@/styles/index.less'
-createApp(App).use(store).use(router).mount('#app')
+// 引入动画插件
+import animated from 'animate.css'
+
+createApp(App).use(store).use(router).use(animated).mount('#app')
