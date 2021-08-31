@@ -31,3 +31,23 @@ export const getSongDetail = ids => {
     }
   })
 }
+
+// 获取歌曲歌词
+export const getSongLyric = id => {
+  return request({
+    method: 'GET',
+    url: '/lyric',
+    params: {
+      id
+    }
+  })
+}
+
+// 查看歌曲是否能正常播放
+export const checkSong = id => {
+  return request({
+    method: 'GET',
+    url: '/check/music',
+    params: { id }
+  })
+}

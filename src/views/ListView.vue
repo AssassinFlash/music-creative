@@ -1,7 +1,7 @@
 <template>
   <div id="listView">
-    <LottieLoading v-show="$store.state.loading"></LottieLoading>
-    <div class="listView">
+    <LottieLoading v-if="$store.state.loading"></LottieLoading>
+    <div class="listView animate__animated animate__fadeInLeft">
       <listViewTop :playlist="state.playlist"></listViewTop>
       <songList :playlist="state.playlist"></songList>
     </div>
@@ -34,7 +34,7 @@ export default {
       // console.log(this.$route.query.id)
       this.$store.commit('setLoading', true)
       const res = await getPlayListDetail(this.$route.query.id)
-      console.log(res.data)
+      // console.log(res.data)
       this.state.playlist = res.data.playlist
       this.$store.commit('setLoading', false)
     }
@@ -44,3 +44,8 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+.listView {
+  animation-duration: .3s;
+}
+</style>

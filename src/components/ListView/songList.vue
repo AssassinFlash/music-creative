@@ -25,7 +25,7 @@
         <LottieLoading v-if="$store.state.loading"></LottieLoading>
         <div class="songItem"
              v-for="(song,index) in songList"
-             :key="index" @click="getControllerFullSongs(song.id)">
+             :key="index" @click="getControllerFullSongs(song.id,index)">
           <div class="left">
             <p class="index">{{ index + 1 }}</p>
             <div class="content">
@@ -65,7 +65,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['setPlaylist', 'setPlayCurrentIndex']),
+    ...mapMutations(['setPlaylist', 'setPlayCurrentIndex', 'setSongId']),
     getFullSongList: async function () {
       this.$store.commit('setLoading', true)
       let ids = ''
@@ -85,10 +85,11 @@ export default {
       res = res.slice(0, res.length - 1)
       return res
     },
-    getControllerFullSongs: function (songId) {
+    getControllerFullSongs: function (songId, index) {
       this.setPlaylist(this.songList)
-      this.setPlayCurrentIndex(songId)
-      // console.log('click')
+      this.setSongId(songId)
+      this.setPlayCurrentIndex(index)
+      this.$store.dispatch('reqLyric', songId)
       emitter.emit('updateController')
     }
   },
