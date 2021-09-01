@@ -1,7 +1,7 @@
 <template>
-  <div id="listView">
+  <div id="listView animate__animated animate__slideInUp">
     <LottieLoading v-if="$store.state.loading"></LottieLoading>
-    <div class="listView animate__animated animate__fadeInLeft">
+    <div>
       <listViewTop :playlist="state.playlist"></listViewTop>
       <songList :playlist="state.playlist"></songList>
     </div>
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.listView {
+#listView {
   animation-duration: .3s;
 }
 </style>

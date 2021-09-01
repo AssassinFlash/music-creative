@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home animate__animated animate__fadeInRight">
     <topNav></topNav>
     <swiperCom></swiperCom>
     <iconList></iconList>
@@ -29,5 +29,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-
+.home{
+  animation-duration: .3s;
+}
 </style>

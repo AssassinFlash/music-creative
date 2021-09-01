@@ -1,8 +1,14 @@
 import { createStore } from 'vuex'
 import { getSongLyric } from '@/api/goodMusicList'
+import { phoneLogin, userDetail } from '@/api/user'
 
 export default createStore({
   state: {
+    user: {
+      isLogin: false,
+      account: {},
+      userdetail: {}
+    }, // 用户信息，判断用户是否登录
     loading: false, // 加载状态
     isShow: false, // 播放歌曲详情
     isPlaying: false, // 正在播放
@@ -40,6 +46,16 @@ export default createStore({
     },
     setSongTime: function (state, value) {
       state.songTime = value
+    },
+    setUserLogin: function (state, value) {
+      state.user.isLogin = value
+    },
+    setUserAccount: function (state, value) {
+      state.user.account = value
+      console.log(state.user.account)
+    },
+    setUserDetail: function (state, value) {
+      state.user.userdetail = value
     }
   },
   actions: {
@@ -81,6 +97,17 @@ export default createStore({
       }
       // console.log(lyricArr)
       content.commit('setLyric', lyricArr)
+    },
+    login: async function (content, userParams) {
+      // console.log(userParams)
+      const res = await phoneLogin(userParams.phone, userParams.password)
+      if (res.data.code === 200) {
+        content.commit('setUserLogin', true)
+        content.commit('setUserAccount', res.data.account)
+        const res1 = await userDetail(res.data.account.id)
+        content.commit('setUserDetail', res1.data)
+      }
+      return res.data
     }
   },
   modules: {}

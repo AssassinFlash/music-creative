@@ -51,3 +51,14 @@ export const checkSong = id => {
     params: { id }
   })
 }
+
+// 搜索歌曲
+export const searchMusic = keywords => {
+  return request({
+    method: 'GET',
+    url: '/cloudsearch',
+    params: {
+      keywords
+    }
+  })
+}

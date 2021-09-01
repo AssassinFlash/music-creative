@@ -211,7 +211,9 @@ export default {
         }
       }
       if (newValue === this.songTime) {
-        emitter.emit('stopSong')
+        // console.log('播放完毕')
+        this.changeSong(1)
+        // emitter.emit('stopSong')
       }
       this.handleProgressBar()
     }
@@ -377,6 +379,8 @@ export default {
       p {
         text-align: center;
         padding: 0.1rem 0;
+        width: 100%;
+        word-break: break-word;
         color: white;
         line-height: 2;
         transition: all 1s;

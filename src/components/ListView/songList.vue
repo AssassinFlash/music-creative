@@ -102,8 +102,8 @@ export default {
       return res
     }
   },
-  async mounted () {
-    await this.getFullSongList()
+  mounted () {
+    this.getFullSongList()
   }
 }
 </script>
