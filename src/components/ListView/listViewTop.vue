@@ -31,8 +31,8 @@
         <div class="contentRight">
           <h3>{{ playlist.name }}</h3>
           <div class="author">
-            <img :src="playlist.creator.avatarUrl" alt="" class="avatar">
-            <span class="author-name">{{ playlist.creator.nickname }}</span>
+            <img :src="avatarUrl" alt="" class="avatar">
+            <span class="author-name">{{ nickname }}</span>
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-right-arrow"></use>
             </svg>
@@ -78,7 +78,7 @@
 <script>
 export default {
   name: 'listViewTop',
-  props: ['playlist'],
+  props: ['playlist', 'avatarUrl', 'nickname'],
   data: function () {
     return {}
   }

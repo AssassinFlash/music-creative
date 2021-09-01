@@ -58,7 +58,7 @@ export default {
   components: {
     LottieLoading
   },
-  props: ['playlist'],
+  props: ['playlist', 'trackIds'],
   data () {
     return {
       songList: []
@@ -69,7 +69,7 @@ export default {
     getFullSongList: async function () {
       this.$store.commit('setLoading', true)
       let ids = ''
-      this.playlist.trackIds.forEach(x => {
+      this.trackIds.forEach(x => {
         ids += x.id + ','
       })
       ids = ids.slice(0, ids.length - 1)
@@ -103,6 +103,7 @@ export default {
     }
   },
   mounted () {
+    console.log(this.trackIds)
     this.getFullSongList()
   }
 }
