@@ -52,7 +52,7 @@ import { getSongDetail } from '@/api/goodMusicList'
 import LottieLoading from '@/components/Loading/LottieLoading'
 import { mapMutations } from 'vuex'
 import emitter from '@/utils/eventBus'
-
+// 废弃
 export default {
   name: 'songList',
   components: {

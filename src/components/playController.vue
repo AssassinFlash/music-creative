@@ -45,7 +45,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import { getSongDetail, checkSong } from '@/api/goodMusicList'
+import { getSongDetail } from '@/api/goodMusicList'
 import emitter from '@/utils/eventBus'
 import playMusic from '@/components/playMusic'
 
@@ -119,16 +119,20 @@ export default {
     playSong: async function () {
       if (this.isPic) {
         // this.isPlaying = true
-        const res = await checkSong(this.song_id)
-        const canSongPlay = res.data.success
-        if (canSongPlay) {
-          this.$store.commit('setIsPlaying', true)
-          this.$refs.audio.play()
-          this.$store.commit('setSongTime', this.$refs.audio.duration)
-          this.updateTime()
-        } else {
-          console.log('该歌曲没有版权')
-        }
+        this.$store.commit('setIsPlaying', true)
+        await this.$refs.audio.play()
+        this.$store.commit('setSongTime', this.$refs.audio.duration)
+        this.updateTime()
+        // const res = await checkSong(this.song_id)
+        // const canSongPlay = res.data.success
+        // if (canSongPlay) {
+        //   this.$store.commit('setIsPlaying', true)
+        //   this.$refs.audio.play()
+        //   this.$store.commit('setSongTime', this.$refs.audio.duration)
+        //   this.updateTime()
+        // } else {
+        //   console.log('该歌曲没有版权')
+        // }
       }
     },
     stopSong: function () {
