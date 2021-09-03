@@ -1,3 +1,9 @@
-> 1%
-last 2 versions
-not dead
+# 这个文件用来确定需要转译的javascript特性和需要添加的css浏览器前缀
+# 兼容到超过1%用户使用的浏览器
+# 兼容到最后两个的版本
+# > 1%
+# last 2 versions
+# not dead
+
+Android >= 4.0
+iOS >= 8

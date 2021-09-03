@@ -62,3 +62,22 @@ export const searchMusic = keywords => {
     }
   })
 }
+
+// 热门歌单分类
+export const hotMusic = () => {
+  return request({
+    method: 'GET',
+    url: '/playlist/hot'
+  })
+}
+
+// 根据标签获得歌单数组
+export const tagPlaylists = cat => {
+  return request({
+    method: 'GET',
+    url: '/top/playlist/highquality',
+    params: {
+      cat
+    }
+  })
+}

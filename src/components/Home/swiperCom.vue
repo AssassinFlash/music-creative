@@ -1,25 +1,32 @@
 <template>
   <div id="banner">
     <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(image,index) in imgs" :key="index">
+      <van-swipe :autoplay="3000" loop>
+        <van-swipe-item v-for="(image,index) in imgs" :key="index">
           <img :src="image.pic" alt="">
-        </div>
-      </div>
-      <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
-
-      <!-- 如果需要导航按钮 -->
-      <!--    <div class="swiper-button-prev"></div>-->
-      <!--    <div class="swiper-button-next"></div>-->
-
+        </van-swipe-item>
+      </van-swipe>
     </div>
+    <!--    <div class="swiper-container">-->
+    <!--      <div class="swiper-wrapper">-->
+    <!--        <div class="swiper-slide" v-for="(image,index) in imgs" :key="index">-->
+    <!--          <img :src="image.pic" alt="">-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--      &lt;!&ndash; 如果需要分页器 &ndash;&gt;-->
+    <!--      <div class="swiper-pagination"></div>-->
+
+    <!--      &lt;!&ndash; 如果需要导航按钮 &ndash;&gt;-->
+    <!--      &lt;!&ndash;    <div class="swiper-button-prev"></div>&ndash;&gt;-->
+    <!--      &lt;!&ndash;    <div class="swiper-button-next"></div>&ndash;&gt;-->
+
+    <!--    </div>-->
   </div>
 </template>
 <script>
 // 导入轮播图组件
-import Swiper from 'swiper'
-import 'swiper/css/swiper.css'
+// import Swiper from 'swiper'
+// import 'swiper/css/swiper.css'
 import { getBanner } from '@/api/banner'
 
 export default {
@@ -42,21 +49,21 @@ export default {
   async mounted () {
     await this.loadBanner()
     // eslint-disable-next-line no-unused-vars
-    const mySwiper = new Swiper('#banner .swiper-container', {
-      direction: 'horizontal', // 垂直切换选项
-      loop: true, // 循环模式选项
-
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination'
-      }
-
-      // 如果需要前进后退按钮
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev'
-      // }
-    })
+    // const mySwiper = new Swiper('#banner .swiper-container', {
+    //   direction: 'horizontal', // 垂直切换选项
+    //   loop: true, // 循环模式选项
+    //
+    //   // 如果需要分页器
+    //   pagination: {
+    //     el: '.swiper-pagination'
+    //   }
+    //
+    //   // 如果需要前进后退按钮
+    //   // navigation: {
+    //   //   nextEl: '.swiper-button-next',
+    //   //   prevEl: '.swiper-button-prev'
+    //   // }
+    // })
   }
 }
 </script>
@@ -70,20 +77,12 @@ export default {
     height: 2.7rem;
     border-radius: .3rem;
     overflow: hidden;
-    margin-top: 0.31rem;
+    margin: 0.31rem auto 0;
 
-    .swiper-slide {
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
-
+    img {
+      width: 100%;
+      height: 100%;
     }
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: orangered;
   }
 }
 

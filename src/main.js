@@ -8,5 +8,6 @@ import '../public/js/rem.js'
 import '@/styles/index.less'
 // 引入动画插件
 import animated from 'animate.css'
-
-createApp(App).use(store).use(router).use(animated).mount('#app')
+import Vant from 'vant'
+import 'vant/lib/index.css'
+createApp(App).use(store).use(router).use(animated).use(Vant).mount('#app')

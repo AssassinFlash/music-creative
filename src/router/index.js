@@ -14,17 +14,17 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ListView.vue')
+    component: () => import(/* webpackChunkName: "ListView" */ '../views/ListView.vue')
   },
   {
     path: '/searchView',
     name: 'SearchView',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue')
+    component: () => import(/* webpackChunkName: "Search" */ '../views/Search.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue')
   },
   {
     path: '/person',
@@ -32,7 +32,12 @@ const routes = [
     meta: {
       requireAuth: true
     },
-    component: () => import(/* webpackChunkName: "about" */ '../views/Person.vue')
+    component: () => import(/* webpackChunkName: "Person" */ '../views/Person.vue')
+  },
+  {
+    path: '/hotPlaylist',
+    name: 'HotPlaylist',
+    component: () => import(/* webpackChunkName: "HotPlaylist" */ '../views/Home/GengduoGedan.vue')
   }
 ]
 
