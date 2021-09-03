@@ -81,3 +81,14 @@ export const tagPlaylists = cat => {
     }
   })
 }
+
+// 热门歌手
+export const getHotSingerList = (limit = 10) => {
+  return request({
+    method: 'GET',
+    url: '/top/artists',
+    params: {
+      limit: limit
+    }
+  })
+}

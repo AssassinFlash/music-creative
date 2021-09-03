@@ -28,6 +28,7 @@
         </div>
       </div>
       <div class="songList animate__animated animate__slideInUp" v-if="isShow">
+        <LottieLoading v-if="$store.state.loading"></LottieLoading>
         <div class="songList-top">
           <div class="left">
             <svg class="icon" aria-hidden="true">
@@ -40,7 +41,6 @@
           </div>
         </div>
         <div class="list">
-          <LottieLoading v-if="$store.state.loading"></LottieLoading>
           <div class="songItem"
                v-for="(song,index) in playlist"
                :key="index" @click="getControllerFullSongs(song.id,index)">
@@ -88,6 +88,9 @@ export default {
     }
   },
   beforeMount () {
+    if (this.$route.params.name) {
+      this.autoSearch(this.$route.params.name)
+    }
     // keywordList是数组，localStorage里是字符串，所以要转换
     this.keywordList = window.localStorage.getItem('keywordList')
       ? JSON.parse(window.localStorage.getItem('keywordList')) : []
@@ -115,7 +118,7 @@ export default {
       this.songCount = res.data.result.songCount
       this.isShow = true
       this.$store.commit('setLoading', false)
-      console.log(res.data)
+      // console.log(res.data)
     },
     author: function (val) {
       let res = ''
