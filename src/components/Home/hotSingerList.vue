@@ -41,7 +41,7 @@ export default {
     const loadHotSingerList = async function () {
       const res = await getHotSingerList()
       hotSingerList.value = res.data
-      console.log(hotSingerList.value)
+      // console.log(hotSingerList.value)
     }
     onBeforeMount(async () => {
       await loadHotSingerList()

@@ -27,37 +27,39 @@
           </div>
         </div>
       </div>
-      <div class="songList animate__animated animate__slideInUp" v-if="isShow">
+      <div>
         <LottieLoading v-if="$store.state.loading"></LottieLoading>
-        <div class="songList-top">
-          <div class="left">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-bofang"></use>
-            </svg>
-            <div class="songCount">
-              <span class="s-title">播放全部</span>
-              <span class="s-count">(共{{ songCount }}首)</span>
-            </div>
-          </div>
-        </div>
-        <div class="list">
-          <div class="songItem"
-               v-for="(song,index) in playlist"
-               :key="index" @click="getControllerFullSongs(song.id,index)">
+        <div class="songList animate__animated animate__slideInUp" v-if="isShow">
+          <div class="songList-top">
             <div class="left">
-              <p class="index">{{ index + 1 }}</p>
-              <div class="content">
-                <p class="song-title">{{ song.name }}</p>
-                <p class="song-author">{{ author(song.ar) }} - {{ song.name }}</p>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-bofang"></use>
+              </svg>
+              <div class="songCount">
+                <span class="s-title">播放全部</span>
+                <span class="s-count">(共{{ songCount }}首)</span>
               </div>
             </div>
-            <div class="right">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-bofang1"></use>
-              </svg>
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-sandian1"></use>
-              </svg>
+          </div>
+          <div class="list">
+            <div class="songItem"
+                 v-for="(song,index) in playlist"
+                 :key="index" @click="getControllerFullSongs(song.id,index)">
+              <div class="left">
+                <p class="index">{{ index + 1 }}</p>
+                <div class="content">
+                  <p class="song-title">{{ song.name }}</p>
+                  <p class="song-author">{{ author(song.ar) }} - {{ song.name }}</p>
+                </div>
+              </div>
+              <div class="right">
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-bofang1"></use>
+                </svg>
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-sandian1"></use>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
