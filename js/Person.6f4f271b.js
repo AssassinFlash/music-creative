@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Person"],{ce40:function(e,n,r){"use strict";r.r(n);var s=r("7a23"),a={id:"personPage"},c=Object(s["i"])("div",{class:"personPage"}," 个人中心 ",-1),o=[c];function i(e,n,r,c,i,t){return Object(s["E"])(),Object(s["h"])("div",a,o)}var t={name:"Person"};t.render=i;n["default"]=t}}]);
-//# sourceMappingURL=Person.87efb91e.js.map
+//# sourceMappingURL=Person.6f4f271b.js.map
