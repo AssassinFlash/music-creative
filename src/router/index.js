@@ -38,6 +38,11 @@ const routes = [
     path: '/hotPlaylist',
     name: 'HotPlaylist',
     component: () => import(/* webpackChunkName: "HotPlaylist" */ '../views/Home/GengduoGedan.vue')
+  },
+  {
+    path: '/mv/:id',
+    name: 'MvView',
+    component: () => import(/* webpackChunkName: "MvView" */ '../views/Mv/MvView')
   }
 ]
 

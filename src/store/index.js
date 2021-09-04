@@ -17,7 +17,9 @@ export default createStore({
     playCurrentIndex: 0, // 当前播放到第几首歌
     lyricList: [], // 歌词
     currentTime: 0, // 歌词播放时间
-    songTime: 0 // 歌曲总时间
+    songTime: 0, // 歌曲总时间
+    mvcurrentTime: 0, // mv播放时间
+    mvTotalTime: 0 // mv总时间
   },
   mutations: {
     setLoading: function (state, status) {
@@ -46,6 +48,12 @@ export default createStore({
     },
     setSongTime: function (state, value) {
       state.songTime = value
+    },
+    setmvcurrentTime: function (state, value) {
+      state.mvcurrentTime = value
+    },
+    setmvtotalTime: function (state, value) {
+      state.mvTotalTime = value
     },
     setUserLogin: function (state, value) {
       state.user.isLogin = value

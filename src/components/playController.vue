@@ -231,6 +231,7 @@ export default {
 
         .tips {
           width: 100%;
+          padding-top: .1rem;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;

@@ -39,12 +39,16 @@
                 </div>
               </div>
               <div class="right">
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bofang1"></use>
-                </svg>
-                <svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-sandian1"></use>
-                </svg>
+                <div class="mv" v-show="song.mv!==0" @click="goMv(song.mv)">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-bofang1"></use>
+                  </svg>
+                </div>
+                <div class="songMore">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-sandian1"></use>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -119,6 +123,12 @@ export default {
       this.setPlayCurrentIndex(index)
       this.$store.dispatch('reqLyric', songId)
       emitter.emit('updateController')
+    },
+    goMv: function (mvId) {
+      this.$router.push({
+        name: 'MvView',
+        params: { id: mvId }
+      })
     }
   },
   computed: {
@@ -192,7 +202,9 @@ export default {
       }
 
       .right {
+        display: flex;
         justify-content: center;
+        align-items: center;
         width: 1.94rem;
         height: .77rem;
         border-radius: .38rem;
@@ -260,13 +272,34 @@ export default {
         }
 
         .right {
-          .icon {
-            width: .292rem;
-            height: .292rem;
-            margin-right: .42rem;
+          display: flex;
+          align-items: center;
+          height: 100%;
 
-            &:first-of-type {
-              margin-left: .2rem;
+          .mv {
+            width: 40px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+              width: .4rem;
+              height: .4rem;
+            }
+          }
+
+          .songMore {
+            width: 40px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: .1rem;
+
+            .icon {
+              width: .4rem;
+              height: .4rem;
             }
           }
         }

@@ -92,3 +92,41 @@ export const getHotSingerList = (limit = 10) => {
     }
   })
 }
+
+// 获取mv详情
+export const getMvDetail = mvid => {
+  return request({
+    method: 'GET',
+    url: '/mv/detail',
+    params: {
+      mvid
+    }
+  })
+}
+
+// 获取mv播放地址
+export const getMvUrl = id => {
+  return request({
+    method: 'GET',
+    url: '/mv/url',
+    params: { id }
+  })
+}
+
+// 获取歌手详情
+export const getSingerDetails = id => {
+  return request({
+    method: 'GET',
+    url: '/artist/detail',
+    params: { id }
+  })
+}
+
+// 获取歌手mv
+export const getSingerMvs = id => {
+  return request({
+    method: 'GET',
+    url: '/artist/mv',
+    params: { id }
+  })
+}
